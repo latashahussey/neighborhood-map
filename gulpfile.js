@@ -1,4 +1,4 @@
-require('gulp'),
+var gulp = require('gulp'),
   rename = require('gulp-rename'),
   minifyCSS = require('gulp-clean-css'),
   minifyJS = require('gulp-uglify'),
@@ -49,4 +49,3 @@ gulp.task('watch', function() {
 
 //Run all gulp tasks
 gulp.task('default', ['jshint', 'minifyCSS', 'minifyJS','watch']);
-
