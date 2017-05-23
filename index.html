@@ -2,50 +2,69 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Custom minified CSS -->
-  <link rel="stylesheet" href="dist/css/style.min.css">
+    <!-- Custom minified CSS -->
+    <link rel="stylesheet" href="dist/css/style.min.css">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
 
 </head>
 
 <body>
+    <!--Search Box-->
 
-  <main class="container">
-
-
-    <!--Google API Map-->
-    <section class="row">
-      <div class="col-md-12">
-        <div id="map"></div>
-        <!--- Show current listings on map--->
-        <button type="button" id="show-listings" value="Show Listings">Show Listings</button>
-    </section>
-    </div>
-    </section>
-
-  </main>
+    <nav class="navbar navbar-light bg-faded justify-content-between">
+        <a class="navbar-brand">Neighborhood Map Project</a></a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2 col-5" type="text" placeholder="Search">
+            <!--- Show current listings on map--->
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="show-listings" value="Show Listings">
+                    Show Listings</button>
+        </form>
+    </nav>
 
 
 
-  <!--- Javascript --->
-  <script src="dist/js/app.min.js"></script>
+    <!--Main content/Search Results-->
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3">
+                **List places here**
+            </div>
+            <!--Google API Map-->
+            <div id="map" class="col-sm-9"></div>
+        </div>
 
-  <!-- jQuery first, then Tether, then Bootstrap JS. -->
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    </main>
 
 
-  <!-- Load map without waiting on page to load -->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVLWZ3aEctkcc5yExFHufCer80KYJu5Eg&libraries=drawing,geometry,places&v=3&callback=initMap">
-  </script>
+
+
+
+
+
+
+    <!---Knockout JS--->
+    <script src="knockout-3.4.2.js"></script>
+
+    <!--- Javascript --->
+    <script src="dist/js/app.min.js"></script>
+
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
+    <!-- Load map without waiting on page to load -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVLWZ3aEctkcc5yExFHufCer80KYJu5Eg&libraries=drawing,geometry,places&v=3&callback=initMap">
+    </script>
 
 </body>
 

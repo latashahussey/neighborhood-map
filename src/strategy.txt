@@ -38,3 +38,14 @@ Include additional third-party data sources beyond the minimum required.
 Style different markers in different (and functionally-useful) ways, depending on the data set.
 Implement additional optimizations that improve the performance and user experience of the filter functionality (keyboard shortcuts, autocomplete functionality, filtering of multiple fields, etc).
 Integrate all application components into a cohesive and enjoyable user experience.
+
+
+-------------
+Webcast Notes
+--------------
+
+Mobile first design
+Then zoom out to find key breakpoints until you get to full desktop
+
+Code must be separated based on knockout's best practices
+Go through Knockout's documentation to learn skills (also remember creator of Knockout gave presentation on this online)
