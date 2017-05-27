@@ -12,14 +12,14 @@ setup google maps api - done!
 display map on page - done!
 - add css to style map, must add height, width to #map and/or html, body - done!
 
-display all marker locations on map by default
+display all marker locations on map by default - done!
 
-animate markers when clicked (e.g. bounce, color change)
+animate markers when clicked (e.g. bounce, color change) - done! (they change color)
 
-create slide out side panel
+create slide out side panel - done! - (doesn't slide out as it is already on the page)
 
 add fields to panel
-- filter location, text input or dropdown
+- filter location, text input or dropdown - done!
 - list view, list of location names, display all by default
 
 create view model using knockout MVVM pattern, use observables

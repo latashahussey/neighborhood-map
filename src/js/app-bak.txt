@@ -4,59 +4,6 @@ var map;
 // Create array for all markers
 var markers = [];
 
-// Latitude and Longitude of locations
-var locations =[
-    {
-    title: 'North Loop',
-    location: {
-      lat: 30.318867,
-      lng: -97.718588
-    }
-  },
-  {
-    title: 'Central Austin',
-    location: {
-      lat: 30.296171,
-      lng: -97.738954
-    }
-  },
-  {
-    title: 'Downtown Austin',
-    location: {
-      lat: 30.272921,
-      lng: -97.744386
-    }
-  },
-  {
-    title: 'East Austin',
-    location: {
-      lat: 30.274415,
-      lng: -97.715923
-    }
-  },
-  {
-    title: 'South Lamar',
-    location: {
-      lat: 30.236265,
-      lng: -97.782422
-    }
-  }
-];
-
-//VIEW MODEL
-var viewModel = {
-    // MODEL
-    // Add several locations to our map in an array
-    // TODO: Update locations to points of interest (e.g. restaurants or apartments)
-    markerLocations:  ko.observableArray(locations)
-};
-
-// This is what data-bind uses to lookup variables
-ko.applyBindings(viewModel);
-
-
-
-
 /**
  * initMap - This is the main function in our app that drives the entire application.
  * It generates the map and sets the locations
@@ -71,6 +18,46 @@ function initMap() {
     zoom: 13,
     mapTypeControl: false // disable user ability to change map type
   });
+
+
+  // Add several locations to our map in an array
+  // TODO: Update locations to points of interest (e.g. restaurants or apartments)
+  var locations = [{
+      title: 'North Loop',
+      location: {
+        lat: 30.318867,
+        lng: -97.718588
+      }
+    },
+    {
+      title: 'Central Austin',
+      location: {
+        lat: 30.296171,
+        lng: -97.738954
+      }
+    },
+    {
+      title: 'Downtown Austin',
+      location: {
+        lat: 30.272921,
+        lng: -97.744386
+      }
+    },
+    {
+      title: 'East Austin',
+      location: {
+        lat: 30.274415,
+        lng: -97.715923
+      }
+    },
+    {
+      title: 'South Lamar',
+      location: {
+        lat: 30.236265,
+        lng: -97.782422
+      }
+    }
+  ];
 
   // Style the markers a bit. This will be our listing marker icon.
   var defaultIcon = makeMarkerIcon('0091ff');
@@ -94,9 +81,6 @@ function initMap() {
     // Push the markers to the array of markers
     markers.push(marker);
 
-    // show all markers by default
-    showListings();
-
     // Two event listeners - one for mouseover, one for mouseout
     // to change the colors back and forth
     marker.addListener('mouseover', function() {
@@ -105,10 +89,13 @@ function initMap() {
     marker.addListener('mouseout', function() {
       this.setIcon(defaultIcon);
     });
+
   }
 } // end initMap
 
 
+// When button is clicked, run appropriate function to show/hide listings
+document.getElementById('show-listings').addEventListener('click', showListings);
 
 /**
  * showListings - This function displays map markers at predefined locations within the boundaries of

@@ -21,10 +21,8 @@
     <nav class="navbar navbar-light bg-faded justify-content-between">
         <a class="navbar-brand">Neighborhood Map Project</a></a>
         <form class="form-inline">
+            <!-- Search box -->
             <input class="form-control mr-sm-2 col-5" type="text" placeholder="Search">
-            <!--- Show current listings on map--->
-            <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="show-listings" value="Show Listings">
-                    Show Listings</button>
         </form>
     </nav>
 
@@ -33,13 +31,17 @@
     <!--Main content/Search Results-->
     <main class="container-fluid">
         <div class="row">
+            <!-- List of Parks -->
             <div class="col-sm-3">
-                **List places here**
+                <table class="table table-hover" data-bind="foreach: markerLocations">
+                    <tr>
+                        <td data-bind="text: title"></td>
+                    </tr>
+                </table>
             </div>
             <!--Google API Map-->
             <div id="map" class="col-sm-9"></div>
         </div>
-
     </main>
 
 
@@ -49,11 +51,12 @@
 
 
 
-    <!---Knockout JS--->
-    <script src="knockout-3.4.2.js"></script>
-
     <!--- Javascript --->
-    <script src="dist/js/app.min.js"></script>
+    <!-- UPDATE TO DIST--->
+    <script src="src/js/knockout-3.4.2.js"></script>
+    <script src="src/js/knockout-3.4.2.debug.js"></script>
+    <script src="src/js/app.js"></script>
+    <!-- MUST FOLLOW KNOCKOUT JS SCRIPTS-->
 
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
